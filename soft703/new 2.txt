@@ -1,0 +1,136 @@
+register.aspx 
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+namespace HashingExample
+{
+    public partial class Register : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnSave_Click(object sender, EventArgs e)
+        {
+            string password = Security.GetHash256(txtPassword.Text, txtUserID.Text);
+            DAL_method dAL_Method = new DAL_method();
+            bool check = dAL_Method.userExistOrNot(txtUserID.Text);
+            if (check)
+            {
+                lblMessage.Text = "User already exists";
+            }
+            else
+            {
+                dAL_Method.saveInformation(txtUserID.Text, password);
+                lblMessage.Text = "Registered successfully";
+            }
+            lblMessage.Visible = true;
+        }
+
+        protected void btnLogin_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Login.aspx");
+        }
+    }
+}
+
+
+
+DAL_method
+
+using System;
+using System.Collections.Generic;
+using System.Configuration;
+using System.Data.SqlClient;
+using System.Linq;
+using System.Web;
+
+
+namespace HashingExample
+{
+    public class DAL_method
+    {
+        string connectionString = ConfigurationManager.ConnectionStrings["connectionDemo"].ConnectionString;
+        SqlConnection connection;
+        public void saveInformation(string userName, string password)
+        {
+            connection = new SqlConnection(connectionString);
+            connection.Open();
+            string query = "insert into tbUsers values('" + userName + "','" + password + "')";
+            SqlCommand command = new SqlCommand(query, connection);
+            command.ExecuteNonQuery();
+            connection.Close();
+        }
+        public bool userExistOrNot(string userName)
+        {
+            bool returnSign = false;
+            connection = new SqlConnection(connectionString);
+            connection.Open();
+            string query = "Select * from tbUsers Where firstName='" + userName + "'";
+            SqlCommand command = new SqlCommand(query, connection);
+            SqlDataReader dr = command.ExecuteReader();
+            returnSign = dr.Read();
+
+            connection.Close();
+            return returnSign;
+        }
+        public bool userHasRegistered(string userName, string password)
+        {
+            bool returnSign = false;
+            connection = new SqlConnection(connectionString);
+            connection.Open();
+            string query = "Select * from tbUsers Where firstName='" + userName + "'and userPassword='" + password + "'";
+            SqlCommand command = new SqlCommand(query, connection);
+            SqlDataReader dr = command.ExecuteReader();
+            returnSign = dr.Read();
+
+            connection.Close();
+            return returnSign;
+        }
+    }
+}
+
+
+
+login.aspx
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+namespace HashingExample
+{
+    public partial class WebForm2 : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnSave_Click(object sender, EventArgs e)
+        {
+            string password = Security.GetHash256(txtPassword.Text, txtUserID.Text);
+            DAL_method dAL_Method = new DAL_method();
+            bool check = dAL_Method.userHasRegistered(txtUserID.Text,password);
+            if (check)
+            {
+                lblMessage.Text = "Login Succeefully";
+            }
+            else
+            {
+                lblMessage.Text = "Invalid user name and password";
+            }
+            lblMessage.Visible = true;
+        }
+    }
+}
+

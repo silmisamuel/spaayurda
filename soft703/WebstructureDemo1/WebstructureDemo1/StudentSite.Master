@@ -1,0 +1,44 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site3.master.cs" Inherits="WebstructureDemo1.Site3" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title> </title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+
+            <div>
+                <td> Header</td>
+               
+                <hr />
+            </div>
+            <div>
+                <td> <asp:Button ID="Button1" runat="server" Text="Home" />&nbsp;
+                <asp:Button ID="Button2" runat="server" Text="Register" />&nbsp;&nbsp;&nbsp;
+                <asp:Button ID="Button3" runat="server" Text="Login" />&nbsp;<hr />
+
+                    </td>
+            </div>
+
+            <div>
+                <td>Contents</td>
+
+                <hr />
+                
+
+            </div>
+
+        </div>
+    </form>
+    <div>Footer</div>
+</body>
+
+    
+</html>

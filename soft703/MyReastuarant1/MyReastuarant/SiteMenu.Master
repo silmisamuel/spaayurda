@@ -1,0 +1,27 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="SiteMenu.master.cs" Inherits="MyReastuarant.SiteMenu" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+
+
+            </asp:ContentPlaceHolder>
+        </div>
+        <asp:Menu ID="Menu1" runat="server">
+            <Items>
+                <asp:MenuItem Text="Lunch menu" Value="Lunch menu"></asp:MenuItem>
+                <asp:MenuItem Text="Dinner Menu" Value="Dinner Menu"></asp:MenuItem>
+                <asp:MenuItem Text="Breakfast menu" Value="Breakfast menu"></asp:MenuItem>
+            </Items>
+        </asp:Menu>
+    </form>
+</body>
+</html>

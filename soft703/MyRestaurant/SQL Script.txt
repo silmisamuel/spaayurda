@@ -1,0 +1,11 @@
+create database dbMyRestaurant 
+go
+use dbMyRestaurant
+go
+create table tblMenu (menuID int, menuName varchar(50), menuDescription varchar(200), menuImage varchar(50), menuPrice decimal(4,2), menuType varchar(50))
+
+insert into tblMenu values(3, 'Coffee', 'Traditional coffe in hot water', 'coffee.jpg', 4.50, 'Breakfast')
+
+select * from tblMenu where menuType='Breakfast';
+
+select * from tblMenu where menuID = 2;

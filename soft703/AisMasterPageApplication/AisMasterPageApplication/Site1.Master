@@ -1,0 +1,75 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="AisMasterPageApplication.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    
+    <style type="text/css">
+        .auto-style1 {
+            width: 100%;
+        }
+    </style>
+    
+    <link href="StyleSheet1.css" rel="stylesheet" type="text/css" />
+    
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+           
+        </div>
+    </form>
+    <table class="auto-style1">
+        <tr class ="header_section">
+            <td>Header
+               <img src="images/ais.png" alt="" width="" height=""></td>
+        </tr>
+        <tr class ="linksection">
+            <td>
+                <a href="Programmes.aspx">PROGRAMMES</a>
+                <a href="Studyatais.aspx">STUDY AT AIS</a>
+                <a href="ForStudents.aspx">FOR STUDENTS</a>
+                <a href="Research.aspx">RESEARCH</a>
+                <a href="Aboutais.aspx">ABOUT AIS</a>
+                <a href="Yourcarreer.aspx">YOUR CARRERR</a>
+                
+        </td>
+        </tr>
+        <tr class ="linksection1">
+            <td>
+                <a href="scholarships.aspx">SCHOLARSHIPS</a>
+                <a href="newsandevents.aspx">NEWS AND EVENTS</a>
+                <a href="agents.aspx">AGENTS</a>
+                <a href="alumini.aspx">ALUMINI</a>
+                <a href="sucessstories.aspx">SUCCESS STORIES</a>
+                
+
+
+            </td>
+        </tr>
+        <tr>
+            <td>Contents<br />
+
+                <h3>WELCOME TO AIS - NZQA CATEGORY 1 PROVIDER</h3>
+           <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+                
+            </td>
+        <tr  class ="footer_images">
+        
+             
+            <td>
+             <img src="images/aisfb.png" alt="" width="" height="">
+             <img src="images/aistwitter.png" alt="" width="" height="">
+             <img src="images/aislinkedin.png" alt="" width="" height="">
+             <img src="images/aisyoutube.png" alt="" width="" height="">
+
+            </td>
+
+            
+        </tr>
+    </table>
+</body>
+</html>

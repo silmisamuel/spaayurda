@@ -1,0 +1,54 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="YellowMotors.master.cs" Inherits="YellowMotors.YellowMotors" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+   
+    <style type="text/css">
+        .newStyle1 {
+            font-family: "Times New Roman", Times, serif;
+        }
+    </style>
+    <link href="StyleSheet1.css" rel="stylesheet" type="text/css" />
+   
+</head>
+<body>
+    <div class ="header_section">
+      
+
+        <div class ="sub_header_section">  </br>
+            <p>YELLOW MOTORS</p>
+
+        </div>
+
+    </div>
+
+    <div class ="link_section">
+        <a href ="Home.aspx">HOME</a>
+        <a href ="Registration.aspx">REGISTRATION</a>
+        <a href ="Login.aspx" id ="link_login">LOGIN</a>
+
+    </div>
+    <div class ="content_section">
+            <form id="form1" runat="server">
+                <div>
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+            </form>
+        </div>
+
+    <div class ="footer_link_section">
+        <a href ="Home.aspx">HOME</a>
+        <a href ="Registration.aspx">REGISTRATION</a>
+        <a href ="Login.aspx" id ="link_login1">LOGIN</a>
+
+    </div>
+
+    <div class ="footer_section">
+       Copyright  &copy - Silmi Samuel -8 march 2019;
+    </div>
+</body>
+</html>

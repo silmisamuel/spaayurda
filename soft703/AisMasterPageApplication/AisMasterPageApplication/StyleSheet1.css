@@ -1,0 +1,35 @@
+﻿body {
+}
+.aisstyle {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: medium;
+    color: #000000;
+}
+.header_section {
+   
+}
+.linksection{
+    background-color :red;
+    color :#FFFFFF;
+    word-spacing:normal;
+    font-size :medium;
+}
+
+.linksection a{
+   
+    color: #FFFFFF;
+    word-spacing:50px;
+    font-size: medium;
+    margin-left:25px;
+    font-weight:bold;
+}
+
+    .linksection1 a {
+        color: red;
+        word-spacing: 50px;
+        font-size: medium;
+        float:right;
+        font-weight: bold;
+        margin-left:20px;
+        
+    }
